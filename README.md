@@ -1,2 +1,2 @@
 # restful-web-services
-Learning restful web
+Learning restful web using itellij
