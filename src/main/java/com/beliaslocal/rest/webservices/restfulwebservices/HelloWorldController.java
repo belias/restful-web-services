@@ -1,9 +1,6 @@
 package com.beliaslocal.rest.webservices.restfulwebservices;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 //Controller -- handling HTTP requests
 @RestController
@@ -25,4 +22,9 @@ public class HelloWorldController {
         return new HelloWorldBean("Hello World");
     }
 
+    // /hello-world/path-variable/belias
+    @GetMapping(path= "/hello-world/path-variable/{name}")
+    public HelloWorldBean helloWorldPathVariable(@PathVariable String name){
+        return new HelloWorldBean(String.format("Hello World! Welcome, %s.", name));
+    }
 }
